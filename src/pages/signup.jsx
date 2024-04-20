@@ -5,6 +5,8 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  
+
   return (
     <form className="max-w-sm mx-auto mt-8">
       <input
