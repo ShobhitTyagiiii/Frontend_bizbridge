@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 
+
 const Home = () => {
   return (
     <div>
@@ -11,9 +12,13 @@ const Home = () => {
           <p className="text-lg text-gray-600">
             Find talented freelancers or showcase your skills to clients worldwide.
           </p>
-          <button className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+    
+       <button onClick={()=>{
+        window.location.href = '/signup';
+       }} className="mt-6 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
             Get Started
           </button>
+
         </div>
       </div>
     </div>

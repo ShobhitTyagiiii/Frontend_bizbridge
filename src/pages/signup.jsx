@@ -5,10 +5,31 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3000/api/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        alert("User Created ");
+        window.location.href = '/login';
+        
+
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
-    <form className="max-w-sm mx-auto mt-8">
+    <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-8">
       <input
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
         type="text"

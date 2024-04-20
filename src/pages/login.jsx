@@ -15,6 +15,15 @@ const Login = () => {
         body: JSON.stringify({ username, password }),
       });
       // Handle response as needed
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        // Redirect to the dashboard
+        
+      }
+
     } catch (error) {
       console.error('Error:', error);
     }
