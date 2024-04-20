@@ -7,7 +7,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault(); // Prevent default form submission
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('http://localhost:6000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
